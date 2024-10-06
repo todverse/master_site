@@ -6,9 +6,73 @@
 
             <h1
                 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                Driving Success With Cutting Edge Technology</h1>
-            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at
-                At our company, we pride ourselves on providing top-notch IT services and support to businesses of all sizes. From cloud computing to cybersecurity, we have the expertise and experience to help your organization thrive in the digital age.</p>
+                ООО «АВТОШКОЛА ДЖЕК БАЛАКОВО»</h1>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                Генеральный директор Червонов Андрей Владимирович. 8 995 393 37 16
+            </p>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                Организация реализует основную программу профессионального обучения – профессиональной подготовки водителей транспортных средств категории «В».
+
+                Код: 11442.
+
+                Наименование профессии: Водитель автомобиля.
+
+                Образовательная деятельность осуществляется на русском языке.
+
+                Форма обучения:  очная, очно-заочная.
+
+            </p>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                Организация реализует основную программу профессионального обучения – профессиональной подготовки водителей транспортных средств категории «В».
+
+                Код: 11442.
+
+                Наименование профессии: Водитель автомобиля.
+
+                Образовательная деятельность осуществляется на русском языке.
+
+                Форма обучения:  очная, очно-заочная.
+
+            </p>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                Организация реализует основную программу профессионального обучения – профессиональной подготовки водителей транспортных средств категории «В».
+
+                Код: 11442.
+
+                Наименование профессии: Водитель автомобиля.
+
+                Образовательная деятельность осуществляется на русском языке.
+
+                Форма обучения:  очная, очно-заочная.
+
+            </p>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                Организация реализует основную программу профессионального обучения – профессиональной подготовки водителей транспортных средств категории «В».
+
+                Код: 11442.
+
+                Наименование профессии: Водитель автомобиля.
+
+                Образовательная деятельность осуществляется на русском языке.
+
+                Форма обучения:  очная, очно-заочная.
+
+            </p>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                Организация реализует основную программу профессионального обучения – профессиональной подготовки водителей транспортных средств категории «В».
+
+                Код: 11442.
+
+                Наименование профессии: Водитель автомобиля.
+
+                Образовательная деятельность осуществляется на русском языке.
+
+                Форма обучения:  очная, очно-заочная.
+
+            </p>
+
+            <p class="mb-8 text-lg font-normal text-gray-500 hover:text-red-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                <a href="https://drive.google.com/drive/folders/1OTG0T6wpXNfYxg7qYKguwds4npbHYUEL" target="_blank">Подробно о нас</a></p>
             <!-- <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                 <p href="#"
                     class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">

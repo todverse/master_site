@@ -1,15 +1,20 @@
 <template>
     <div class="flex h-full w-full flex-col">
-    <div v-if="!no_child.state" class="flex flex-row mt-5 w-full justify-center items-center">
-        <p class="text-center text-base text-blue-700 dark:text-gray-200">Contact us (email/phone) for further
-            information. Prices may vary based on requirements.</p>
+    <div v-if="!no_child.state" class="mt-5 w-full">
+        <h1
+            class="text-center mb-4 text-blue-700 text-lg font-extrabold leading-none tracking-tight sm:text-4xl lg:text-5xl dark:text-white">
+            СТОИМОСТЬ ОБУЧЕНИЯ
+        </h1>
+        <p class="text-center text-base text-blue-700 dark:text-gray-200">
+            Подробности Вы можете узнать по телефону: 8-927-057-39-39
+        </p>
     </div>
-    <div class="flex flex-col h-full min-w-[100%] justify-center items-start flex-nowrap overflow-auto">
+    <div class="flex flex-col h-full w-full justify-center items-start flex-nowrap overflow-hidden">
 
 
 
         <div v-if="!no_child.state"
-            class="flex p-10 flex-col grow  justify-center  lg:flex-row  gap-16 w-fit items-center lg:w-max lg:h-max">
+            class="flex p-10 gap-4">
             <TransitionGroup :css="false" appear @enter="enter" @after-enter="end">
                 <div v-for="i in data[target]" :key='i' :id="(data[target]).indexOf(i)"
                     class="flex flex-col h-full w-full p-0 gradient-border flex-nowrap  ">
@@ -86,15 +91,12 @@ let data = props.data
 
 let target = props.activate
 
-
 if (data[target].length == 1) {
     no_child.state = true
 
-}
-else {
+} else {
     animation_delay = calculate_animation_delay(.3)
     reverse_animation_delay = calculate_reverse_animation_delay(animation_delay)
-
 }
 
 

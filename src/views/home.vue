@@ -1,16 +1,17 @@
 <template>
-    <div class="fade-bg">
+    <div class="fade-bg h-full" style="background-image: url('/public/bg_home.jpg'); background-size: cover;">
+        <div class="h-full" style="opacity: 0.8; background-color: rgb(238, 238, 238);">
 
 
 
-        <div class="relative pb-9" data-carousel="slide">
+        <div class="relative pt-20" data-carousel="slide">
             <!-- Carousel wrapper -->
-            <div class="relative h-56 overflow-hidden  sm:h-64 xl:h-80 2xl:h-96">
+            <div class="relative h-64 overflow-hidden sm:h-64 xl:h-80 2xl:h-96">
                 <!-- Item 1 -->
 
                 <div :id="_key" class="hidden duration-700 ease-in-out" v-for="_key in Object.keys(data)">
-                    <img :src="'/' + _key + '.webp'"
-                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                    <img :src="'/' + _key + '.jpg'"
+                        class="absolute rounded-lg block h-4/5 sm:h-full xl:h-full 2xl:h-full w-auto -translate-x-1/2 left-1/2">
                 </div>
 
             </div>
@@ -48,28 +49,54 @@
                 </span>
             </button> -->
         </div>
-        <div class="flex justify-center  w-full ">
+        <div class="flex justify-center w-full py-20">
             <div class="p3">
-            <Transition v-show="!will_change.state" name="slide-fade" appear>
-                <div>
-                    <h1
-                        class="text-center mb-4 text-blue-900 text-lg font-extrabold leading-none tracking-tight sm:text-4xl lg:text-5xl dark:text-white">
-                        {{ header.title }}</h1>
-                    <p
-                        class="text-center mb-6 text-blue-800 text-sm font-normal sm:text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
-                        {{ header.description }}</p>
-                </div>
+                <Transition v-show="!will_change.state" name="slide-fade" appear>
+                    <div>
+                        <h1
+                            class="text-center mb-4 text-blue-900 text-lg font-extrabold leading-none tracking-tight sm:text-4xl lg:text-5xl dark:text-white">
+                            {{ header.title }}</h1>
+                        <p
+                            class="text-center mb-6 text-blue-800 text-sm font-normal sm:text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
+                            {{ header.description }}</p>
+                    </div>
 
-            </Transition>
-        </div>
+                </Transition>
+            </div>
         </div>
 
+        <div class="flex justify-center w-full py-20 bg-gray-500">
+            <div class="p3">
+                <Transition v-show="!will_change.state" name="slide-fade" appear>
+                    <div>
+                        <h1
+                            class="text-center mb-4 text-white text-lg font-extrabold leading-none tracking-tight sm:text-4xl lg:text-5xl dark:text-white">
+                            КОНТАКТЫ
+                        </h1>
+                        <p
+                            class="text-center mb-6 text-white text-sm font-normal sm:text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
+                            Телефон: 8-927-057-39-39   
+                        </p>
+                        <p
+                            class="text-center mb-6 text-white text-sm font-normal sm:text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
+                            г. Балаково, ул. Набережная Леонова, 63/1, 1 этаж 
+                        </p>
+                        <p
+                            class="text-center mb-6 text-white text-sm font-normal sm:text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
+                            Время работы: ПН-ПТ 9:00-19:00, СБ 9:00-16:00    
+                        </p>
+                    </div>
+
+                </Transition>
+            </div>
+        </div>
+
+        <div class="w-full">
+            <iframe class="w-full h-96" src="https://yandex.ru/map-widget/v1/?lang=ru_RU&scroll=false&source=constructor-api&um=constructor%3Abde41dca70033fca321599eb512b106b41772336f18aeef6ad14071b49d3cd9d"></iframe>
+        </div>
+
+        </div>
     </div>
-
-
-
-
-
 </template>
 
 

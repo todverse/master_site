@@ -1,7 +1,7 @@
 <template>
 
   <div class="flex flex-col h-screen">
-    <navbar :menu_items=menu_data phone_number="+00000" :company_name=company_name email="dummy@dummy" />
+    <navbar :menu_items=menu_data phone_number="8-927-057-39-39" :company_name=company_name email="dummy@dummy" />
 
 
     <div class='flex-grow bg-white-300 dark:bg-gray-500'>
@@ -58,7 +58,7 @@ import about from "./views/about.vue"
 
 
 
-const company_name = "Company"
+const company_name = 'ООО «АВТОШКОЛА ДЖЕК БАЛАКОВО»'
 
 let current_option = reactive({ state: 'home' })
 let pricing_menu = NaN
@@ -66,16 +66,16 @@ let pricing_menu = NaN
 
 let home_data = {
   "desktop": {
-    title: "Dedicated Desktop Application For Your Business?",
-    description: "Standalone or cloud-based, we can provide solution for our clients. We develop application which is not only cross-platform also cost effective. We have expertise in technologies like JavaFx, Dot Net etc.",
+    title: 'Обучение вождению на категорию  "В"',
+    description: "Обучение может проходить по очной и заочной программе.",
   },
   "web_back": {
-    title: "Database Solution That is Future Proof & Scalable.",
-    description: "Most relatable, robust and scalable backend frameworks are our first choice when planning solutions. We have years experience in proven technologies like Django, Laravel and Spring Boot."
+    title: "Нас выбирают",
+    description: "БОЛЕЕ 3000 УЧЕНИКОВ ЕЖЕГОДНО ВЫБИРАЮТ АВТОШКОЛУ «МАСТЕР»"
   },
   "mobile": {
-    title: "Want Dedicated and Customized Android & iOS App?",
-    description: "We provide services to build apps according to your requirements. We build for iOS and Android both for the same cost. Trust us to solve your problems."
+    title: "Комфортные условия",
+    description: "Новое оборудование, новые автомобили, все ЛУЧШЕЕ ДЛЯ НАШИХ УЧЕНИКОВ."
   },
 
 }
@@ -125,14 +125,13 @@ let development_data = {
 }
 
 let menu_data = {
-  "Home": current_option_initiate,
-  "Services": current_option_initiate,
-  "About": current_option_initiate,
-  "Pricing": {
+  "Главная": current_option_initiate,
+  // "Услуги": current_option_initiate,
+  "О нас": current_option_initiate,
+  "Цены": {
 
-    Development: pricing_menu_initiate, // Name is very important, The name must match with other pricing menu options
-    Seo: pricing_menu_initiate,
-    "Telephony" : pricing_menu_initiate
+    "Калькулятор": pricing_menu_initiate, // Name is very important, The name must match with other pricing menu options
+    "Прайс-лист": pricing_menu_initiate
 
   },
 
@@ -142,73 +141,86 @@ let menu_data = {
 
 let pricing_data = {
 
-  "development": [{
-    title: "Web Development",
-    description: "Starting From",
-    money: "$700",
-    features: ["Single/Multi Page Architecture", "Scalable Backend", " Beautiful UI/UX ", "Customizable"]
-
-  },
-  {
-    title: "Mobile App",
-    description: "Starting From",
-    money: "$899",
-    features: ["Both iOS & Android ", "Advance Security ", "Optimized UI", "Customers Tracking", "Free Deployment on Store"]
-
-  },
-  {
-    title: "Desktop Application",
-    description: "Starting From",
-    money: "$499",
-    features: ["Cloud/Local Database", "Cross Compatible (Linux/Windows)", "Optimized", "Advance UI"]
-
-  },
+  "calculator": [
+    {
+      title: "КОМФОРТ" ,
+      description: "",
+      money: "30 390₽",
+      features: [
+        "Полный курс по теории", 
+        "Полный курс практических занятий", 
+        "Медицинские тренажеры", 
+        "Запись на вождение в первую очередь", 
+        "Свидетельство о профессии водителя", 
+        "Получение налогового вычета на всю сумму  обучения", 
+        'Брошюра "ПДД"', 
+        'Пособие "Экзаменационные билеты"', 
+        "Доступ к обучающему видео"]
+    }
   ],
 
-  "seo": [
+  "price" : [
     {
-      description: "Search engine optimization for small businesses and individuals who want to improve their search engine rankings and visibility.\nThe package typically includes keyword research, on-page optimization, link building, advanced strategies such as\nlocal SEO, technical SEO and content marketing, as well as monthly reporting.  "
+      title: "КОМФОРТ" ,
+      description: "",
+      money: "30 390₽",
+      features: [
+        "Полный курс по теории", 
+        "Полный курс практических занятий", 
+        "Медицинские тренажеры", 
+        "Запись на вождение в первую очередь", 
+        "Свидетельство о профессии водителя", 
+        "Получение налогового вычета на всю сумму  обучения", 
+        'Брошюра "ПДД"', 
+        'Пособие "Экзаменационные билеты"', 
+        "Доступ к обучающему видео"]
+    },
+    {
+      title: "КОМФОРТ 2" ,
+      description: "",
+      money: "29 390₽",
+      features: [
+        "Полный курс по теории", 
+        "Полный курс практических занятий", 
+        "Медицинские тренажеры", 
+        "Запись на вождение в первую очередь", 
+        "Свидетельство о профессии водителя", 
+        "Получение налогового вычета на всю сумму  обучения", 
+        'НЕТ', 
+        'НЕТ', 
+        "Доступ к обучающему видео"]
+    },
+    {
+      title: "СТАНДАРТ 1" ,
+      description: "",
+      money: "27 390₽",
+      features: [
+        "Полный курс по теории", 
+        "Полный курс практических занятий", 
+        "Медицинские тренажеры", 
+        "Запись на вождение по графику", 
+        "Свидетельство о профессии водителя", 
+        "Получение налогового вычета на всю сумму  обучения", 
+        'НЕТ', 
+        'НЕТ', 
+        "Доступ к обучающему видео"]
+    },
+    {
+      title: "АВТОМАТ" ,
+      description: "",
+      money: "34 390₽",
+      features: [
+        "Полный курс по теории", 
+        "Полный курс практических занятий на автомобиле с автоматической коробкой пердач", 
+        "Медицинские тренажеры", 
+        "Запись на вождение в первую очередь", 
+        "Свидетельство о профессии водителя", 
+        "Получение налогового вычета на всю сумму обучения",
+        "Получение налогового вычета на всю сумму  обучения", 
+        'Брошюра "ПДД"', 
+        'Пособие "Экзаменационные билеты"', 
+        "Доступ к обучающему видео"]
     }
-
-  ], 
-
-  "telephony" : [
-    {
-      title: "Basic PBX (One-Time)" ,
-      description: "Starting From ",
-      money: "$1000",
-      features: ["On-premises", "Add-on options available", "Scalable to grow with business",]
-    },
-    {
-      title: "Basic PBX (Cloud)",
-      description: "Starting From (Monthly)",
-      money: "$50",
-      features: ["Cloud", "Add-on options available", "Scalable to grow with business","Easy to set up and use"]
-    },
-    {
-      title: "Advance PBX (One-Time)" ,
-      description: "Starting From ",
-      money: "$1500",
-      features: ["On-premises", "Advanced features, such as call routing and voicemail", "Integration with CRM and other software","Integration With AI"]
-    },
-    {
-      title: "Advance PBX (Cloud)",
-      description: "Starting From (Monthly)",
-      money: "$70",
-      features: ["Cloud","Integration With AI", "Scalable to grow with business","Easy to set up and use"]
-    },
-    {
-      title: "Basic PBX (One-Time)" ,
-      description: "Starting From ",
-      money: "$1000",
-      features: ["On-premises", "Add-on options available", "Scalable to grow with business",]
-    },
-    {
-      title: "Basic PBX (Cloud)",
-      description: "Starting From (Monthly)",
-      money: "$50",
-      features: ["Cloud", "Add-on options available", "Scalable to grow with business","Easy to set up and use"]
-    },
   ]
 
 
@@ -229,7 +241,12 @@ function handel_menu_change(target) {
 }
 
 function pricing_menu_initiate(selected) {
-  
+  if(selected == 'калькулятор') {
+    selected = 'calculator'
+  }
+  if(selected == 'прайс-лист') {
+    selected = 'price'
+  }
   pricing_menu = selected
   handel_menu_change('pricing')
   // console.log(selected)
@@ -237,6 +254,15 @@ function pricing_menu_initiate(selected) {
 
 function current_option_initiate(current) {
   // handel_fade(current)
+  if(current == 'главная') {
+    current = 'home'
+  }
+  if(current == 'услуги') {
+    current = 'services'
+  }
+  if(current == 'о нас') {
+    current = 'about'
+  }
   handel_menu_change(current)
   
   
