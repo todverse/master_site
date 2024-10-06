@@ -17,7 +17,7 @@
                     ↑
                 </h1>
             </div>
-            <img v-for="item in items" :src="`/public/kit_page-00${item}.jpg`">
+            <img v-for="item in items" :src="`/kit_page-00${item}.jpg`">
             <!-- <h1
                 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                 ООО «АВТОШКОЛА ДЖЕК БАЛАКОВО»</h1>
