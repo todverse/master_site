@@ -5,13 +5,13 @@
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
             <p class="mb-8 text-lg font-normal text-gray-500 hover:text-red-500 lg:text-xl dark:text-gray-400">
                 <a href="https://drive.google.com/drive/folders/19W15chh1cKYqLpxRRgvf8ys2b5XmAGqk" target="_blank">Подробно о нас</a></p>
-            <div v-if="state == 'down'" class="w-20 fixed bottom-32 right-32 hover:cursor-pointer hover:bg-gray-200" @click="goDown">
+            <div v-if="state == 'down'" class="w-20 fixed bottom-1 right-1 lg:bottom-32 lg:right-32 hover:cursor-pointer hover:bg-gray-200" @click="goDown">
                 <h1
                 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                     ↓
                 </h1>
             </div>
-            <div v-else class="w-20 fixed bottom-32 right-32 hover:cursor-pointer hover:bg-gray-200" @click="goUp">
+            <div v-else class="w-20 fixed bottom-1 right-1 lg:bottom-32 lg:right-32 hover:cursor-pointer hover:bg-gray-200" @click="goUp">
                 <h1
                 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                     ↑
