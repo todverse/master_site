@@ -9,7 +9,7 @@
         <a :href= "'tel:'+phone_number" class="mr-6 w-full text-sm font-medium text-blue-900 dark:text-white hover:underline">{{ phone_number }}</a>
         <!-- <p class="mr-6 text-sm w-full font-medium text-blue-900 dark:text-white hover:underline"> {{'Email: '+ email }}</p> -->
       </div>
-        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
+        <!-- <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
           <button type="button" @click="dark">
             <svg v-if="dark_mode.state" class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -21,7 +21,7 @@
                 d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
             </svg>
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </nav>

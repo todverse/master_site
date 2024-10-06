@@ -14,10 +14,10 @@
 
 
         <div v-if="!no_child.state"
-            class="flex p-10 gap-4">
+            class="flex p-10 gap-4 flex-wrap lg:flex-nowrap">
             <TransitionGroup :css="false" appear @enter="enter" @after-enter="end">
                 <div v-for="i in data[target]" :key='i' :id="(data[target]).indexOf(i)"
-                    class="flex flex-col h-full w-full p-0 gradient-border flex-nowrap  ">
+                    class="flex flex-col lg:h-full w-full p-0 gradient-border flex-nowrap">
                     <div
                         class="flex flex-col grow flex-nowrap w-full  h-full text-center text-gray-900 bg-white p-4 shadow border border-gray-100  dark:border-gray-600  dark:bg-gray-800 dark:text-white border_round">
                         <h3 class="mb-4 text-2xl font-semibold">{{ i.title }}</h3>
@@ -48,15 +48,80 @@
         </div>
 
         <div v-if="no_child.state"
-            class="flex  justify-items-start justify-start  w-full h-full pt-[10%] px-[5%] pb-[10%] min-h-[30%]  bg-cover bg-right-bottom fade-bg"
+            class="flex  justify-items-start justify-start  w-full h-full md:p-5 bg-cover bg-right-bottom fade-bg"
             style="background-image: url('/contact.webp');">
-            <div
-                class="flex flex-col  flex-wrap min-w-[45%] max-w-[90%]   bg-black p-4  bg-opacity-75 sm:bg-gray-900 rounded-lg justify-center shrink sm:bg-opacity-50">
-                <h1 class="text-left mb-4 text-5xl font-extrabold leading-none tracking-tight text-blue-200 ">
-                    Contact Us.
-                </h1>
-                <p class="text-left mb-6 text-xl font-normal pl-3  text-gray-100 whitespace-pre-line">
-                    {{ data[target][0].description }}</p>
+            <div class="flex flex-wrap lg:flex-nowrap w-full  bg-black p-4  bg-opacity-75 sm:bg-gray-900 rounded-lg justify-center shrink sm:bg-opacity-50">
+                <div class="w-full lg:w-1/2">
+                    <h1 class="text-left mb-4 text-4xl font-extrabold leading-none tracking-tight text-blue-200 ">
+                        {{ data[target][0].title }}
+                    </h1>
+                    <p class="text-left mb-6 text-xl font-normal pl-3  text-gray-100 whitespace-pre-line">
+                        {{ data[target][0].description }}
+                    </p>
+                    
+                    <h2 class="text-left mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-200 ">Категория</h2>
+                    <div class="flex flex-wrap md:flex-nowrap">
+                        <div v-for="(cat, index) in categories" :class="`w-10 h-10 m-2 leading-10 ${selected_cat == index? 'bg-red-600 text-white': 'bg-white text-black'} text-center rounded-lg hover:cursor-pointer hover:bg-red-500`" @click="select_cat(index)">
+                            <h4 class="font-bold">{{ cat.title }}</h4>
+                        </div>
+                    </div>
+                    <p class="text-gray-100">
+                        {{ categories[selected_cat].desc }}
+                    </p>
+
+                    <h2 class="text-left mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-200 ">Формат теории</h2>
+                    <div class="flex flex-wrap md:flex-nowrap">
+                        <div v-for="(cat, index) in theories" :class="`w-36 h-10 m-2 leading-10 ${selected_teo == index? 'bg-red-600 text-white': 'bg-white text-black'} text-center rounded-lg hover:cursor-pointer hover:bg-red-500`" @click="select_teo(index)">
+                            <h4 class="font-bold">{{ cat.title }}</h4>
+                        </div>
+                    </div>
+
+                    <h2 class="text-left mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-200 ">Коробка передач</h2>
+                    <div class="flex flex-wrap md:flex-nowrap">
+                        <div v-for="(cat, index) in pere" :class="`w-36 h-10 m-2 leading-10 ${selected_pere == index? 'bg-red-600 text-white': 'bg-white text-black'} text-center rounded-lg hover:cursor-pointer hover:bg-red-500`" @click="select_pere(index)">
+                            <h4 class="font-bold">{{ cat.title }}</h4>
+                        </div>
+                    </div>
+
+                    <h2 class="text-left mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-200 ">Количество часов практики</h2>
+                    <div class="custom-slider">
+                        <input class="w-1/3" type="range" min="2" max="60" step="1" v-model="hours_value">
+                        <br>
+                        <div class="w-1/3 flex">
+                            <p class="text-white text-xl font-extrabold w-1/2">2</p>
+                            <p class="text-white text-xl font-extrabold w-1/2 text-end">60</p>
+                        </div>
+                        <h4 class="text-gray-100 text-xl font-extrabold"> Выбрано <span class="text-red-600">{{ hours_value }}</span></h4>
+                    </div>
+                </div>
+
+
+
+                <div class="w-full lg:w-1/2">
+                    <h1 class="text-left mb-4 text-4xl font-extrabold leading-none tracking-tight text-blue-200 ">
+                        Итоговая стоимость
+                    </h1>
+                    <p class="text-left mb-6 text-5xl font-extrabold pl-3  text-red-800 whitespace-pre-line">
+                        {{ Math.floor(base * categories[selected_cat].koeff + base * theories[selected_teo].koeff + base * pere[selected_pere].koeff + hours_value * 1000) }}₽
+                    </p>
+                    <p class="text-left mb-6 text-xl font-normal pl-3  text-gray-100 whitespace-pre-line">
+                        Возможна рассрочка. Платежи ~ {{ Math.floor((base * categories[selected_cat].koeff + base * theories[selected_teo].koeff + base * pere[selected_pere].koeff + hours_value * 1000)/12) }}₽
+                    </p>
+                    <p class="text-left mb-6 text-xl font-normal pl-3  text-gray-100 whitespace-pre-line">
+                        В стоимость курса включено:<br>
+
+                        Теоретический курс.<br>
+                        Сдача внутреннего экзамена бесплатно.<br>
+                        Проведение внутренних экзаменов.<br>
+                        Свидетельство об окончании автошколы.<br>
+                        Подача мотоцикла на экзамены в ГИБДД.<br>
+                        Пакет документов для сдачи в ГИБДД.<br>
+                        Сопровождение до получения прав.<br>
+                        Персональный менеджер.<br>
+                        ГСМ (бензин) бесплатно.<br>
+                    </p>
+                    <button class="w-1/3 h-15 md:h-10 bg-white rounded-lg font-extrabold hover:bg-gray-900 hover:text-white">Оставить заявку</button>
+                </div>
             </div>
         </div>
 
@@ -77,7 +142,7 @@
 <script setup>
 
 import gsap from 'gsap'
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 
 let animation_delay
 let reverse_animation_delay
@@ -99,6 +164,102 @@ if (data[target].length == 1) {
     reverse_animation_delay = calculate_reverse_animation_delay(animation_delay)
 }
 
+
+let base = ref(5000)
+
+let select_cat = (i) => {
+    selected_cat.value = i
+}
+let selected_cat = ref(0)
+let categories = ref([
+    {
+        title: 'A',
+        desc: 'Категория A - мотоциклы',
+        koeff: 0.1,
+    },
+    {
+        title: 'A1',
+        desc: 'Категория A1 - легкие мотоциклы',
+        koeff: 0.1,
+    },
+    {
+        title: 'A1',
+        desc: 'Категория A - снегоход и квадроцикл',
+        koeff: 0.1,
+    },
+    {
+        title: 'B',
+        desc: 'Категория B - легковые авто',
+        koeff: 1.8,
+    },
+    {
+        title: 'B1',
+        desc: 'Категория В1 - квадроциклы',
+        koeff: 2,
+    },
+    {
+        title: 'BE',
+        desc: 'Категория BE - с прицепом',
+        koeff: 2.2,
+    },
+    {
+        title: 'C',
+        desc: 'Категория C - грузовые авто',
+        koeff: 2.4,
+    },
+    {
+        title: 'CE',
+        desc: 'Категория СЕ - с прицепом',
+        koeff: 2.4,
+    },
+    {
+        title: 'D',
+        desc: 'Категория D - автобусы',
+        koeff: 2.5,
+    },
+    {
+        title: 'DE',
+        desc: 'Категория DE - сочлененные автобусы',
+        koeff: 2.5,
+    }
+])
+
+
+let select_teo = (i) => {
+    selected_teo.value = i
+}
+let selected_teo = ref(0)
+let theories = ref([
+    {
+        title: 'В классе',
+        koeff: 1.9,
+    },
+    {
+        title: 'Online',
+        koeff: 1.5,
+    },
+    {
+        title: 'Без теории',
+        koeff: 0.5,
+    },
+])
+
+let select_pere = (i) => {
+    selected_pere.value = i
+}
+let selected_pere = ref(0)
+let pere = ref([
+    {
+        title: 'Механическая',
+        koeff: 1.5,
+    },
+    {
+        title: 'Автоматическая',
+        koeff: 2,
+    },
+])
+
+let hours_value = ref(4)
 
 
 
@@ -285,5 +446,63 @@ div.scroll {
         opacity: 1;
         /* opacity: 1; */
     }
+}
+
+
+
+.custom-slider {
+  --trackHeight: 0.5rem;
+  --thumbRadius: 1rem;
+}
+
+/* style the input element with type "range" */
+.custom-slider input[type="range"] {
+  position: relative;
+  appearance: none;
+  /* pointer-events: none; */
+  border-radius: 999px;
+  z-index: 0;
+}
+
+/* ::before element to replace the slider track */
+.custom-slider input[type="range"]::before {
+  content: "";
+  position: absolute;
+  width: var(--ProgressPercent, 100%);
+  height: 100%;
+  background: #860000;
+  /* z-index: -1; */
+  pointer-events: none;
+  border-radius: 999px;
+}
+
+/* `::-webkit-slider-runnable-track` targets the track (background) of a range slider in chrome and safari browsers. */
+.custom-slider input[type="range"]::-webkit-slider-runnable-track {
+  appearance: none;
+  background: #5a0000;
+  height: var(--trackHeight);
+  border-radius: 999px;
+}
+
+/* `::-moz-range-track` targets the track (background) of a range slider in Mozilla Firefox. */
+.custom-slider input[type="range"]::-moz-range-track {
+  appearance: none;
+  background: #5a0000;
+  height: var(--trackHeight);
+  border-radius: 999px;
+}
+
+.custom-slider input[type="range"]::-webkit-slider-thumb {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: var(--thumbRadius);
+  height: var(--thumbRadius);
+  /* margin-top: calc((var(--trackHeight) - var(--thumbRadius)) / 2); */
+  background: #ff3838;
+  border-radius: 999px;
+  pointer-events: all;
+  appearance: none;
+  z-index: 1;
 }
 </style>

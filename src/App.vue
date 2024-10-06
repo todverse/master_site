@@ -1,7 +1,7 @@
 <template>
 
   <div class="flex flex-col h-screen">
-    <navbar :menu_items=menu_data phone_number="8-927-057-39-39" :company_name=company_name email="dummy@dummy" />
+    <navbar :menu_items=menu_data phone_number=" +7 (8452) 77-93-77" :company_name=company_name email="dummy@dummy" />
 
 
     <div class='flex-grow bg-white-300 dark:bg-gray-500'>
@@ -58,7 +58,7 @@ import about from "./views/about.vue"
 
 
 
-const company_name = 'ООО «АВТОШКОЛА ДЖЕК БАЛАКОВО»'
+const company_name = 'ООО "МАСТЕР-164"'
 
 let current_option = reactive({ state: 'home' })
 let pricing_menu = NaN
@@ -143,8 +143,8 @@ let pricing_data = {
 
   "calculator": [
     {
-      title: "КОМФОРТ" ,
-      description: "",
+      title: "Калькулятор" ,
+      description: "Просчитайте стоимость обучения здесь",
       money: "30 390₽",
       features: [
         "Полный курс по теории", 

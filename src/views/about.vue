@@ -3,8 +3,22 @@
     <div class="bg-white dark:bg-gray-900 flex grow h-full w-full">
     <section class="fade">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-
-            <h1
+            <p class="mb-8 text-lg font-normal text-gray-500 hover:text-red-500 lg:text-xl dark:text-gray-400">
+                <a href="https://drive.google.com/drive/folders/19W15chh1cKYqLpxRRgvf8ys2b5XmAGqk" target="_blank">Подробно о нас</a></p>
+            <div v-if="state == 'down'" class="w-20 fixed bottom-32 right-32 hover:cursor-pointer hover:bg-gray-200" @click="goDown">
+                <h1
+                class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                    ↓
+                </h1>
+            </div>
+            <div v-else class="w-20 fixed bottom-32 right-32 hover:cursor-pointer hover:bg-gray-200" @click="goUp">
+                <h1
+                class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                    ↑
+                </h1>
+            </div>
+            <img v-for="item in items" :src="`/public/kit_page-00${item}.jpg`">
+            <!-- <h1
                 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                 ООО «АВТОШКОЛА ДЖЕК БАЛАКОВО»</h1>
             <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
@@ -69,10 +83,7 @@
 
                 Форма обучения:  очная, очно-заочная.
 
-            </p>
-
-            <p class="mb-8 text-lg font-normal text-gray-500 hover:text-red-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-                <a href="https://drive.google.com/drive/folders/1OTG0T6wpXNfYxg7qYKguwds4npbHYUEL" target="_blank">Подробно о нас</a></p>
+            </p> -->
             <!-- <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                 <p href="#"
                     class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
@@ -150,6 +161,42 @@
 
 </template>
 
+<script setup>
+import {ref, onMounted} from 'vue'
+
+let state = ref('down')
+let items = ref([
+
+])
+for(let i = 1; i<56; i++) {
+    if(i<10) {
+        items.value.push('0'+i)
+    } else {
+        items.value.push(''+i)
+    }
+}
+
+let goDown = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+let goUp = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+onMounted(() => {
+    window.addEventListener('scroll', (e) => {
+        if(window.scrollY < 150) {
+            state.value = 'down'
+        } else {
+            state.value = 'up'
+        }
+        // let top = window.scrollY || document.documentElement.scrollTop
+        // if(top) {
+        //     console.log(top)
+        // }
+    })
+})
+</script>
 
 
 <style scoped>

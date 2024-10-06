@@ -75,11 +75,11 @@
                         </h1>
                         <p
                             class="text-center mb-6 text-white text-sm font-normal sm:text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
-                            Телефон: 8-927-057-39-39   
+                            Телефон:  +7 (8452) 77-93-77   
                         </p>
                         <p
                             class="text-center mb-6 text-white text-sm font-normal sm:text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
-                            г. Балаково, ул. Набережная Леонова, 63/1, 1 этаж 
+                            г. Саратов
                         </p>
                         <p
                             class="text-center mb-6 text-white text-sm font-normal sm:text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
@@ -92,7 +92,7 @@
         </div>
 
         <div class="w-full">
-            <iframe class="w-full h-96" src="https://yandex.ru/map-widget/v1/?lang=ru_RU&scroll=false&source=constructor-api&um=constructor%3Abde41dca70033fca321599eb512b106b41772336f18aeef6ad14071b49d3cd9d"></iframe>
+            <iframe class="w-full h-96" src="https://yandex.ru/map-widget/v1/?lang=ru_RU&scroll=true&source=constructor-api&um=constructor%3Ahl8ErZJ-kwCSMK_K5o1i6siAG5dW3oH4"></iframe>
         </div>
 
         </div>
