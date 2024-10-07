@@ -91,7 +91,9 @@
                             <p class="text-white text-xl font-extrabold w-1/2">2</p>
                             <p class="text-white text-xl font-extrabold w-1/2 text-end">60</p>
                         </div>
-                        <h4 class="text-gray-100 text-xl font-extrabold"> Выбрано <span class="text-red-600">{{ hours_value }}</span></h4>
+                        <p class="text-gray-100 text-xl font-extrabold"> Выбрано <input @change="maxmincheck" min="2" max="60" class="bg-transparent text-xl text-white font-extrabold border-gray-100 focus:border-red-500 focus:text-red-500 focus:ring-0" type="number" v-model="hours_value"></p>
+                        <!-- <input @change="maxmincheck" min="2" max="60" class="bg-transparent text-red-500 font-extrabold border-0 focus:border-red-500 focus:ring-red-500" type="number" v-model="hours_value"> -->
+                        <!-- <h4 class="text-gray-100 text-xl font-extrabold"> Выбрано <span class="text-red-600">{{ hours_value }}</span></h4> -->
                     </div>
                 </div>
 
@@ -163,7 +165,6 @@ if (data[target].length == 1) {
     animation_delay = calculate_animation_delay(.3)
     reverse_animation_delay = calculate_reverse_animation_delay(animation_delay)
 }
-
 
 let base = ref(5000)
 
@@ -247,7 +248,14 @@ let pere = ref([
 let hours_value = ref(4)
 
 
-
+let maxmincheck = (e) => {
+    if(hours_value.value < 2) {
+        hours_value.value = 2
+    }
+    if(hours_value.value > 60) {
+        hours_value.value = 60
+    }
+}
 
 
 
@@ -489,5 +497,12 @@ div.scroll {
   pointer-events: all;
   appearance: none;
   z-index: 1;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 </style>
