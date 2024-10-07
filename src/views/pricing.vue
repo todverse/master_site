@@ -85,9 +85,9 @@
 
                     <h2 class="text-left mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-200 ">Количество часов практики</h2>
                     <div class="custom-slider">
-                        <input class="w-1/3" type="range" min="2" max="60" step="1" v-model="hours_value">
+                        <input class="w-4/5 md:w-2/5 lg:w-1/3" type="range" min="2" max="60" step="1" v-model="hours_value">
                         <br>
-                        <div class="w-1/3 flex">
+                        <div class="w-4/5 md:w-2/5 lg:w-1/3 flex">
                             <p class="text-white text-xl font-extrabold w-1/2">2</p>
                             <p class="text-white text-xl font-extrabold w-1/2 text-end">60</p>
                         </div>
@@ -120,7 +120,7 @@
                         Персональный менеджер.<br>
                         ГСМ (бензин) бесплатно.<br>
                     </p>
-                    <button class="w-1/3 h-15 md:h-10 bg-white rounded-lg font-extrabold hover:bg-gray-900 hover:text-white">Оставить заявку</button>
+                    <button class="w-4/5 md:w-2/5 lg:w-1/3 h-10 bg-white rounded-lg font-extrabold hover:bg-gray-900 hover:text-white">Оставить заявку</button>
                 </div>
             </div>
         </div>
