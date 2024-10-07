@@ -1,5 +1,5 @@
 <template>
-    <div class="fade-bg h-full" style="background-image: url('/public/bg_home.jpg'); background-size: cover;">
+    <div class="fade-bg h-full" style="background-image: url('/bg_home.jpg'); background-size: cover;">
         <div class="h-full" style="opacity: 0.8; background-color: rgb(238, 238, 238);">
 
 

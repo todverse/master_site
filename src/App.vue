@@ -15,7 +15,7 @@
       <pricing v-if="current_option.state === 'pricing'" :data=pricing_data :activate=pricing_menu />
 
 
-      <about v-if="current_option.state === 'about'" class="flex grow justify-center bg-white  w-full p-10"/>
+      <about v-if="current_option.state === 'about'" class="flex grow justify-center bg-white  w-full"/>
         
       
 
