@@ -1,23 +1,24 @@
 <template>
-
-  <div class="flex flex-col h-screen">
-    <navbar :menu_items=menu_data phone_number=" +7 (8452) 77-93-77" :company_name=company_name email="dummy@dummy" />
-
-
-    <div class='flex-grow bg-white-300 dark:bg-gray-500'>
-
-      <home v-if="current_option.state === 'home'" :data=home_data />
-
-      <services v-if="current_option.state === 'services'" :data=development_data />
+  <div :class="store.state.isOpenModal? 'h-screen overflow-hidden': 'h-screen'">
+    <modal v-if="store.state.isOpenModal"></modal>
+    <div :class="store.state.isOpenModal? 'flex flex-col h-screen': 'flex flex-col h-screen'">
+      <navbar :menu_items=menu_data phone_number=" +7 (8452) 77-93-77" :company_name=company_name email="dummy@dummy" />
 
 
+      <div class='flex-grow bg-white-300 dark:bg-gray-500'>
 
-      <pricing v-if="current_option.state === 'pricing'" :data=pricing_data :activate=pricing_menu />
+        <home v-if="current_option.state === 'home'" :data=home_data />
+
+        <services v-if="current_option.state === 'services'" :data=development_data />
 
 
-      <about v-if="current_option.state === 'about'" class="flex grow justify-center bg-white  w-full"/>
+
+        <pricing v-if="current_option.state === 'pricing'" :data=pricing_data :activate=pricing_menu />
+
+
+        <about v-if="current_option.state === 'about'" class="flex grow justify-center bg-white  w-full"/>
+          
         
-      
 
 
 
@@ -28,13 +29,14 @@
 
 
 
+
+      </div>
+
+
+
+      <foot :company_name=company_name fb_link="https://www.facebook.com/" git_link="https://github.com/MusaChowdhury/IT-Company-Website-Vue3" />
 
     </div>
-
-
-
-    <foot :company_name=company_name fb_link="https://www.facebook.com/" git_link="https://github.com/MusaChowdhury/IT-Company-Website-Vue3" />
-
   </div>
 </template>
 
@@ -56,7 +58,10 @@ import services from './views/services.vue'
 import pricing from "./views/pricing.vue"
 import about from "./views/about.vue"
 
+import Modal from './components/modal.vue'
 
+import { useStore } from 'vuex'
+const store = useStore()
 
 const company_name = 'ООО "МАСТЕР-164"'
 
@@ -309,6 +314,8 @@ price_background_image.src = '/contact.webp'
 
 
 <style scoped>
-
+.main {
+  z-index: -1;
+}
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="fade-bg h-full" style="background-image: url('/bg_home.jpg'); background-size: cover;">
+    <div v-show="!store.state.isOpenModal" class="fade-bg h-full" style="background-image: url('/bg_home.jpg'); background-size: cover;">
         <div class="h-full" style="opacity: 0.8; background-color: rgb(238, 238, 238);">
 
 
@@ -103,8 +103,11 @@
 
 
 <script setup>
-import { reactive, onMounted } from 'vue';
+import { reactive, onMounted, computed } from 'vue';
 import { Carousel } from 'flowbite'
+
+import { useStore } from 'vuex'
+const store = useStore()
 
 let if_initial = true
 
@@ -125,6 +128,7 @@ for (let i in data) {
 
 onMounted(() => {
     carousel_creator()
+    console.log(store.state.isOpenModal)
 })
 
 
