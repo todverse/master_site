@@ -17,8 +17,16 @@
         <section class="modal-body">
           <slot name="body">
             <div class="flex flex-wrap h-full overflow-hidden">
-                <div v-if="!Object.keys(store.state.promo).length" v-for="item in promos" class="w-1/3 border-2 h-1/3 game-block" @click="click(item)"></div>
-                <div v-else v-for="item in promos" class="w-1/3 border-2 h-1/3 game-block"></div>
+                <div v-if="!Object.keys(store.state.promo).length" v-for="item in promos" class="w-1/3 h-1/3 flex items-center" @click="click(item)">
+                    <div class="w-4/5 h-4/5 m-auto border-2 game-block">
+
+                    </div>
+                </div>
+                <div v-else v-for="item in promos" class="w-1/3 h-1/3  flex items-center">
+                    <div class="w-4/5 h-4/5 m-auto border-2 game-block">
+
+                    </div>
+                </div>
                 <!-- <div class="w-1/3 border-2 h-1/3 game-block"></div>
                 <div class="w-1/3 border-2 h-1/3 game-block"></div>
                 <div class="w-1/3 border-2 h-1/3 game-block"></div>
