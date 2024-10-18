@@ -76,41 +76,50 @@ const store = useStore()
 let copied = ref(false)
 let openNotification = ref(false)
 
+let generateString = (length) => {
+  let abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPRSTUVWXYZ1234567890";
+  let rs = "";
+  while (rs.length < length) {
+      rs += abc[Math.floor(Math.random() * abc.length)];
+  }
+  return rs
+}
+
 let promos = [
     {
-        promo: 'dsdfjsdiov',
+        promo: generateString(10),
         discount: '50%'
     },
     {
-        promo: 'dfgdfgdfewr',
+        promo: generateString(10),
         discount: '10%'
     },
     {
-        promo: 'jhgdgdsfdfdb',
+        promo: generateString(10),
         discount: '10%'
     },
     {
-        promo: 'rgfggfhtyrtr',
+        promo: generateString(10),
         discount: '30%'
     },
     {
-        promo: 'gdfffjgghn',
+        promo: generateString(10),
         discount: '20%'
     },
     {
-        promo: 'retesthdsgst',
+        promo: generateString(10),
         discount: '40%'
     },
     {
-        promo: 'klkl.jk,hjmg',
+        promo: generateString(10),
         discount: '20%'
     },
     {
-        promo: 'argersdsdfbdb',
+        promo: generateString(10),
         discount: '10%'
     },
     {
-        promo: 'dhgkgfkryewergg',
+        promo: generateString(10),
         discount: '30%'
     }
 ]
